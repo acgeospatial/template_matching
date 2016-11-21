@@ -1,18 +1,18 @@
 import cv2
 import numpy as np
 
-## image canvas
+## image canvas (set the path you your sat image in ...canvas)
 img_rgb = cv2.imread('...canvas')
 img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
 
-## template image
+## template image (set path to template in ...template)
 template = cv2.imread('...template',0)
 ## dimensions
 w, h = template.shape[::-1]
 
 res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
 
-#### Adjust this threshold value to suit you, you may need some trial runs
+#### Adjust this threshold value to suit you, you may need some trial runs (critical!)
 threshold = 0.45
 loc = np.where( res >= threshold)
 
