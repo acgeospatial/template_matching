@@ -34,7 +34,7 @@ for pt in zip(*loc[::-1]):
 		count+=1 ### count the number of matches
 	else:
 		continue
-print "total objects found ", count
+print ("total objects found ", count)
 
 ## show the images matched	
 cv2.imshow('Detected',img_rgb)
